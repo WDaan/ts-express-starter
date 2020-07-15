@@ -1,15 +1,19 @@
-FROM node:lts-alpine  as build-stage
+# build
+FROM node:lts-alpine as build-stage
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app/
-RUN npm install
- 
-COPY . /usr/src/app
+WORKDIR /app
+COPY . .
+RUN npm i
 RUN npm run build
 
-ENV NODE_ENV docker
+# production
+FROM node:lts-alpine  as production-stage
+
+WORKDIR /app
+COPY --from=build-stage ./app/dist ./dist
+COPY package* ./
+RUN npm i --production
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "start" ]
+CMD npm start

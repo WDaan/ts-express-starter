@@ -3,6 +3,7 @@ import * as mongoose from 'mongoose'
 import * as bodyParser from 'body-parser'
 import 'dotenv/config'
 import apiRouter from './routes/Api'
+import webRouter from './routes/Web'
 
 const app = express()
 
@@ -19,6 +20,7 @@ mongoose.set('useCreateIndex', true)
 /**
  * Routes
  */
+app.use('/', webRouter)
 app.use('/api', apiRouter)
 
 export default app

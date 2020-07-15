@@ -4,13 +4,14 @@
         "target": "es6",
         "esModuleInterop": false,
         "noImplicitAny": false,
-        "sourceMap": true,
+        "sourceMap": false,
         "experimentalDecorators": true,
         "pretty": true,
         "moduleResolution": "node",
         "baseUrl": ".",
         "allowSyntheticDefaultImports": true,
-        "alwaysStrict": false
+        "alwaysStrict": false,
+        "outDir": "./dist"
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]

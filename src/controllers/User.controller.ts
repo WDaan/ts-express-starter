@@ -14,7 +14,7 @@ class UserController {
     }
 
     /**
-     * GET get all users
+     * GET get user by id
      * @param id
      */
     public async show(req: Request, res: Response): Promise<any> {
