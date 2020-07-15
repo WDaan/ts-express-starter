@@ -23,7 +23,6 @@
 1) npm i
 
 2) npm run watch
-
 ```
 
 ## Production
@@ -31,16 +30,13 @@
 #### - regular
 ```
 npm run build
-
 ```
 #### - docker
 ```
 docker build . -t api
-
 ```
 
 #### - docker-compose
 ```
 docker-compose up --build
-
 ```
